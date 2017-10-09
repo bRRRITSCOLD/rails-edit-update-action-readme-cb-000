@@ -775,3 +775,32 @@ RuntimeError ({"utf8"=>"✓", "_method"=>"put", "authenticity_token"=>"qsVTzVO1T
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.1ms)
+
+
+Started GET "/" for 207.199.222.159 at 2017-10-09 18:56:58 +0000
+Cannot render console from 207.199.222.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 27ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1/edit" for 207.199.222.159 at 2017-10-09 18:57:05 +0000
+Cannot render console from 207.199.222.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 256ms (Views: 239.0ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/posts/1" for 207.199.222.159 at 2017-10-09 18:57:09 +0000
+Cannot render console from 207.199.222.159! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tCcbR9aziuYeYmaopAprcCvOH0j8K7AYNilXi+h3CtZUIChOsRIArYcwGwRNdTz7JD4jp7c4KpQ7ybynfUgO+A==", "title"=>"Rails Introduction Quizsadfdsf", "description"=>"asdfasdf", "commit"=>"Submit Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.3ms)[0m  [1mUPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Rails Introduction Quizsadfdsf"], ["updated_at", "2017-10-09 18:57:09.722499"], ["id", 1]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Redirected to http://174.138.35.103:48758/posts/1
+Completed 302 Found in 16ms (ActiveRecord: 5.0ms)
